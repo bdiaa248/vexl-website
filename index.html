@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- FAVICON SETUP -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    
+    <!-- SEO & Social Sharing Tags -->
+    <meta name="description" content="VEXL - The Architects of Spatial Intelligence. Bridging the gap between academic theory and market reality in GeoAI and Mapping." />
+    <meta name="keywords" content="GeoAI, GIS, Mapping, VEXL, Spatial Intelligence, Cairo University, Graduation Projects, Data Visualization" />
+    <meta name="author" content="VEXL Studio" />
+    <meta name="theme-color" content="#02040a" />
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vexl-studio.com/" />
+    <meta property="og:title" content="VEXL | The Future of GeoAI" />
+    <meta property="og:description" content="Engineering the future of location intelligence. Join the elite network of Geo-Scientists and Architects." />
+    <meta property="og:image" content="/og-image.jpg" /> <!-- Make sure to add an image later -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vexl-studio.com/" />
+    <meta property="twitter:title" content="VEXL | The Future of GeoAI" />
+    <meta property="twitter:description" content="Engineering the future of location intelligence." />
+    <meta property="twitter:image" content="/og-image.jpg" />
+
+    <title>VEXL | The Future of GeoAI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              slate: {
+                850: '#151f2e',
+              }
+            },
+            animation: {
+              'blob': 'blob 10s infinite',
+            },
+            keyframes: {
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&family=Noto+Sans+Arabic:wght@200;300;400;500;600;700&display=swap');
+      
+      /* CRITICAL FIX: Set immediate dark background to prevent white flash on load */
+      html, body {
+        background-color: #02040a;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        cursor: none; /* Hide default cursor to use custom one */
+      }
+      
+      /* Re-enable default cursor for touch devices via media query */
+      @media (hover: none) and (pointer: coarse) {
+        html, body {
+            cursor: auto;
+        }
+      }
+
+      .font-sans {
+        font-family: 'Inter', sans-serif;
+      }
+      
+      .font-arabic {
+        font-family: 'Noto Sans Arabic', sans-serif;
+      }
+
+      /* Clean Cyber Grid - Thinner, subtler */
+      .cyber-grid {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 200%;
+        height: 200%;
+        background-size: 60px 60px;
+        transform: perspective(500px) rotateX(60deg) translateY(-100px) translateZ(-200px);
+        animation: gridMove 20s linear infinite;
+        pointer-events: none;
+        z-index: 0;
+        mask-image: linear-gradient(to bottom, transparent 5%, black 40%, transparent 90%); /* Fade out edges */
+      }
+
+      .dark .cyber-grid {
+        background-image: 
+          linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+        opacity: 0.3;
+      }
+
+      .cyber-grid {
+         background-image: 
+          linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        opacity: 0.5;
+      }
+
+      @keyframes gridMove {
+        0% { transform: perspective(500px) rotateX(60deg) translateY(0) translateZ(-200px); }
+        100% { transform: perspective(500px) rotateX(60deg) translateY(60px) translateZ(-200px); }
+      }
+
+      /* Ultra Sleek Scrollbar */
+      ::-webkit-scrollbar {
+        width: 4px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.5); 
+        border-radius: 10px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: rgba(6, 182, 212, 0.3); 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(6, 182, 212, 0.8); 
+      }
+
+      /* Aurora Background Blob Utilities */
+      .aurora-blob {
+        position: fixed;
+        filter: blur(120px); /* INCREASED BLUR from 80px to 120px for smoother gradient */
+        z-index: 0;
+        opacity: 0.4;
+        animation: blob 20s infinite alternate;
+        border-radius: 50%;
+      }
+
+      /* Glassmorphism Utilities */
+      .glass-panel {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      
+      .dark .glass-panel {
+        background: rgba(10, 10, 15, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.22.3",
+    "@remix-run/router": "https://esm.sh/@remix-run/router@1.15.3",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.25.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.5.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7",
+    "three": "https://esm.sh/three@^0.182.0",
+    "@emailjs/browser": "https://esm.sh/@emailjs/browser@^4.4.1",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-helmet-async": "https://esm.sh/react-helmet-async@^2.0.5"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
